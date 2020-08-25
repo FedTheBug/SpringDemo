@@ -1,0 +1,35 @@
+<!DOCTYPE xml>
+<web-app>
+
+   <welcome-file-list>
+     <welcome-file>menu.html</welcome-file>
+   </welcome-file-list>
+   
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+	<display-name>spring-mvc-demo</display-name>
+	
+	<absolute-ordering />
+	
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/spring-mvc-demo-servlet.xml</param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>spring</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value></param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>spring</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+</web-app>
